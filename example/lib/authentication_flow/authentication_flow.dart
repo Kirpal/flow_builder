@@ -72,6 +72,12 @@ class SplashPage extends StatelessWidget {
                 context.read<AuthenticationCubit>().login();
               },
             ),
+            ElevatedButton(
+              child: const Text('Settings'),
+              onPressed: () {
+                Navigator.of(context).push(SettingsPage.route());
+              },
+            ),
           ],
         ),
       ),
@@ -181,6 +187,20 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: const Center(child: Text('Home')),
+    );
+  }
+}
+
+class SettingsPage extends StatelessWidget {
+  static Route<void> route() => MaterialPageRoute(
+        builder: (_) => SettingsPage(),
+      );
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      body: const Center(child: Text('Settings')),
     );
   }
 }
